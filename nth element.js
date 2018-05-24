@@ -14,4 +14,6 @@ function nth(list, n) {
     return nth(list.rest, n - 1);
 }
 
-console.log(nth(arrayToList([20, 30, 40]), 1));
+console.log(nth(arrayToList([12, 10, 40]), 1));
+
+const l = (list,n) => (nth(arrayToList([12-20-30]), 4));
