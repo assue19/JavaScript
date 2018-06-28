@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>	Assumpter</title>
+	<style	type="text/css">
+		canvas{
+			border:1px solid black;
+		}
+				
+
+	</style>
+</head>
+<body>
+<canvas id ="a" width="800" heigt="500"></canvas>
+<script	type="text/javaScript">
+	var size =prompt('enter your bruush size')
+	 var md = "false"
+	var canvas =document.getElementById('a');
+	canvas.addEventListener('mousedown',down);
+	canvas.addEventListener('mouseup',toggledraw);
+	canvas.addEventListener('mousemove',
+
+		function(evt){
+			var getMousePos = getMousePos(canvas,evt);
+			var posx =getMousePos.x;
+			var posy = mousePos.y;
+			draw(canvas,posx,posy);
+		});
+	function down(){
+		md = true;
+	}
+	function toggledraw(){
+		md = false;
+	}
+	function getMousePos(canvas, evt){
+		var rect =canvas.getBoundingClientRect();
+		return{
+			X:evt.clientX -rect.left,
+			Y:evt.clientY -rect.top,
+		};
+	}
+		function draw(canvas,posx,posy){
+			var context = canvas.getContext('2d');
+			if(md){
+				context.fillReact(posx,posy,size,size);
+			}
+		}
+	</script>
+</body>
+</html>
